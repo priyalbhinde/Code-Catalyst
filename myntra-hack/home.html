@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra Clone</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="logo.webp" alt="Myntra Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Kids</a></li>
+          <li><a href="#">Home & Living</a></li>
+          <li><a href="#">Offers</a></li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for products..." />
+          <button type="button">Search</button>
+        </div>
+        <div class="analysis-button">
+          <button
+            type="button"
+            onclick="window.location.href = 'http://127.0.0.1:8000/app/visuals';"
+          >
+            View Trends
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="landing">
+        <div class="landing-content">
+          <h1>Welcome to the New Way of Exploring and Buying Clothes!</h1>
+          <p>
+            Discover an exciting new feature on Myntra that revolutionizes your
+            shopping experience.
+          </p>
+          <a href="index.html" class="explore-button" onclick="maintainStreak()"
+            >Explore Now</a
+          >
+          <p class="streak-info" id="streakDisplay"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Myntra Clone. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+      // Function to display streak
+      function displayStreak() {
+        let currentStreak =
+          parseInt(localStorage.getItem("currentStreak")) || 0;
+        document.getElementById(
+          "streakDisplay"
+        ).textContent = `Current Streak: ${currentStreak} days`;
+      }
+
+      // Call displayStreak on page load
+      displayStreak();
+    </script>
+  </body>
+</html>
